@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache-develop-new
+  name: apache-develop
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apache-develop-new
+      app: apache-develop
   template:
     metadata:
       labels:
-        app: apache-develop-new
+        app: apache-develop
     spec:
       containers:
-      - name: apache-develop-new
+      - name: apache-develop
         image: httpd:latest
         ports:
         - containerPort: 80
