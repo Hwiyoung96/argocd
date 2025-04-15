@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: apache-staging
-  namespace: staging
+  name: apache-develop
+  namespace: default
 spec:
   selector:
-    app: apache-staging
+    app: apache-develop
   ports:
   - port: 80
     targetPort: 80

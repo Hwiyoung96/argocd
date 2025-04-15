@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache-staging
-  namespace: staging
+  name: apache-develop
+  namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apache-staging
+      app: apache-develop
   template:
     metadata:
       labels:
-        app: apache-staging
+        app: apache-develop
     spec:
       containers:
-      - name: apache-staging
+      - name: apache-develop
         image: httpd:latest
         ports:
         - containerPort: 80
