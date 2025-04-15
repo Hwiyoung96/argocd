@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache-prod
+  namespace: prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apache-prod
+  template:
+    metadata:
+      labels:
+        app: apache-prod
+    spec:
+      containers:
+      - name: apache-prod
+        image: httpd:invalid  # 잘못된 태그로 변경
+        ports:
+        - containerPort: 80
